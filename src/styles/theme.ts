@@ -80,6 +80,7 @@ const texts = {
       lg: "2rem",
       xl: "3rem",
     },
+    "line-height": "130%",
   },
   body: {
     color: colors.text.base,
@@ -89,9 +90,13 @@ const texts = {
       xs: ".75rem",
       sm: ".875rem",
       md: "1rem",
-      ls: "1.125rem",
+      lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
+    },
+    "line-height": {
+      normal: "130%",
+      relaxed: "160%",
     },
   },
 }

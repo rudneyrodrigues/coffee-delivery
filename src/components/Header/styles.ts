@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   top: 0;
   position: sticky;
+  z-index: 9999;
 
   & > .header-content {
     max-width: 1120px;

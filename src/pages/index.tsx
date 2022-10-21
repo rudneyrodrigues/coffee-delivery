@@ -4,6 +4,8 @@ import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, type NextPage } from 'next';
 
 import { Header } from '../components/Header';
+import { Container, Main } from '../styles/pages/Home/style';
+import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 
 type CoffeeProps = {
   id: string;
@@ -29,11 +31,54 @@ const Home: NextPage = ({ coffees }: HomeProps): JSX.Element => {
         <title>Bem vindo - Coffee Delivery</title>
       </Head>
 
-      <div>
+      <Container>
         <Header />
 
-        <h1>Home page</h1>
-      </div>
+        <Main>
+          <div className="intro-home">
+            <div className='intro-home-content'>
+              <h1>
+                Encontre o café perfeito para qualquer hora do dia
+              </h1>
+              <span>
+                Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
+              </span>
+
+              <div className="intro-home-content-items">
+                <div className="items-content">
+                  <div className="icon-container icon-shopping">
+                    <ShoppingCart weight="fill" className="icon" />
+                  </div>
+                  <p>Compra simples e segura</p>
+                </div>
+                <div className="items-content">
+                  <div className="icon-container icon-package">
+                    <Package weight="fill" className="icon" />
+                  </div>
+                  <p>Embalagem mantém o café intacto</p>
+                </div>
+                <div className="items-content">
+                  <div className="icon-container icon-timer">
+                    <Timer weight="fill" className="icon" />
+                  </div>
+                  <p>Entrega rápida e rastreada</p>
+                </div>
+                <div className="items-content">
+                  <div className="icon-container icon-coffee">
+                    <Coffee weight="fill" className="icon" />
+                  </div>
+                  <p>O café chega fresquinho até você</p>
+                </div>
+              </div>
+            </div>
+            <Image src="/images/cup-of-coffee.png" alt="Copo de café" width={476} height={360} layout="fixed" />
+          </div>
+
+          <div className="coffees-home">
+            <h1>Nossos cafés</h1>
+          </div>
+        </Main>
+      </Container>
     </>
   )
 }

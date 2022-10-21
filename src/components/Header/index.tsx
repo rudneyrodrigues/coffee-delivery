@@ -12,7 +12,7 @@ export const Header = (): JSX.Element => {
         <Image src="/images/logo.svg" alt="Coffee Delivery" width={84.95} height={40} />
 
         <div className="header-buttons">
-          <Button size="sm" variant="primary" leftIcon={<MapPin weight="fill" />}>
+          <Button size="sm" variant="secondary" leftIcon={<MapPin weight="fill" />}>
             Petrolina, PE
           </Button>
 
