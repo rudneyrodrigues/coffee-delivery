@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { theme } from '../../../styles/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
   height: 4rem;
@@ -22,6 +22,11 @@ export const Container = styled.div`
 
     & > .header-buttons {
       margin-left: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
     }
   }
 `;

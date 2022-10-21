@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { theme } from '../../../styles/theme';
+import { theme } from '../../styles/theme';
 
 interface ButtonProps {
   full?: boolean;
@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export const Container = styled.button`
   width: ${(props: ButtonProps) => props.full ? "100%" : "auto"};
-  height: ${(props: ButtonProps) => props.size === 'lg' ? "2.875rem" : "2rem"};
+  height: ${(props: ButtonProps) => props.size === 'lg' ? "2.875rem" : "2.375rem"};
   padding: ${(props: ButtonProps) => props.size === 'lg' ? "0 2.8125rem" : "0 .5rem"};
 
   display: flex;
@@ -36,8 +36,8 @@ export const Container = styled.button`
   }
 
   & > .icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.375rem;
+    height: 1.375rem;
     color: ${(props: ButtonProps) => props.variant === 'primary' ? `${theme.colors.gray[200]}` : `${theme.colors.secondary.mid}`};
   }
 `;

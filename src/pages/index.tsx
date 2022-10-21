@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, type NextPage } from 'next';
-import Image from 'next/image';
-import { Header } from './components/Header';
+
+import { Header } from '../components/Header';
 
 type CoffeeProps = {
   id: string;
