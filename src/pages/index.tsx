@@ -6,6 +6,7 @@ import { GetStaticProps, type NextPage } from 'next';
 import { Header } from '../components/Header';
 import { Container, Main } from '../styles/pages/Home/style';
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
+import { CoffeeCard } from '../components/CoffeeCard';
 
 type CoffeeProps = {
   id: string;
@@ -14,6 +15,7 @@ type CoffeeProps = {
   content: string;
   price: number;
   inventory: number;
+  tags: [];
   image: {
     fileName: string;
     url: string;
@@ -76,6 +78,21 @@ const Home: NextPage = ({ coffees }: HomeProps): JSX.Element => {
 
           <div className="coffees-home">
             <h1>Nossos cafés</h1>
+
+            <div className="list-coffees">
+              { coffees.map(coffee => (
+                <CoffeeCard
+                  key={coffee.id}
+                  slug={coffee.slug}
+                  image={coffee.image}
+                  title={coffee.title}
+                  content={coffee.content}
+                  inventory={coffee.inventory}
+                  tags={coffee.tags}
+                  price={coffee.price}
+                />
+              )) }
+            </div>
           </div>
         </Main>
       </Container>
@@ -88,15 +105,16 @@ export default Home;
 export const getStaticProps: GetStaticProps = async () => {
   const hyGraph = new GraphQLClient(process.env.NEXT_PUBLIC_HYGRAPH_CONTENT_API);
 
-  const { coffees } = await hyGraph.request(`
+  const { coffees }: HomeProps = await hyGraph.request(`
     query GetCafes {
-      coffees {
+      coffees(first: 20) {
         id
         title
         slug
         content
         price
         inventory
+        tags
         image {
           fileName
           url
@@ -105,9 +123,18 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   `);
 
+  const formattedCoffees = coffees.map(coffee => {
+    return {
+      ...coffee,
+      price: coffee.price.toLocaleString('pt-br',{
+        minimumFractionDigits: 2
+      })
+    }
+  })
+
   return {
     props: {
-      coffees,
+      coffees: formattedCoffees,
     },
     revalidate: 3600 // 1 hora
   }

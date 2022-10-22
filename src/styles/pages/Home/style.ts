@@ -12,6 +12,7 @@ export const Main = styled.main`
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
+  padding: 0 1rem;
 
   & > .intro-home {
     padding: 5.875rem 0;
@@ -96,5 +97,15 @@ export const Main = styled.main`
     }
   }
 
-  & > .coffees-home {}
+  & > .coffees-home {
+    & > .list-coffees {
+      margin: 3.375rem 0;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2.5rem 2rem;
+      align-items: center;
+      justify-items: center;
+    }
+  }
 `;
