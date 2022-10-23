@@ -47,10 +47,11 @@ export const Container = styled.div`
   }
 
   & > h2 {
+    margin-top: 1rem;
+    text-align: center;
     color: ${theme.colors.text.base};
     font-size: ${theme.texts.heading.fontSize.sm};
     line-height: ${theme.texts.heading['line-height']};
-    text-align: center;
   }
 
   & > span {
@@ -81,6 +82,13 @@ export const Container = styled.div`
         font-family: ${theme.texts.heading.fontFamily};
         line-height: ${theme.texts.heading['line-height']};
       }
+    }
+
+    & > .coffee-card-buy-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
     }
   }
 `;

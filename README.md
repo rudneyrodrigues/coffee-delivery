@@ -13,4 +13,5 @@
 - [x] Criar componente de Header.
 - [x] Criar Home page.
 - [x] Criar container de intro da Home page.
-- [ ] Criar listagem de cafés na Home page.
+- [x] Criar listagem de cafés na Home page.
+- [ ] Adicionar contexto do carrinho de compras.

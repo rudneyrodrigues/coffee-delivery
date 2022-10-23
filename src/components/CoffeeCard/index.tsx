@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { ShoppingCart } from "phosphor-react";
+
+import { Counter } from "../Counter";
 import { IconButton } from "../IconButton";
 
 import { Container } from './styles';
@@ -65,6 +67,7 @@ export const CoffeeCard = ({
         </small>
 
         <div className="coffee-card-buy-actions">
+          <Counter min={1} max={inventory} inventory={inventory} />
           <IconButton icon={<ShoppingCart weight="fill" />} />
         </div>
       </div>
