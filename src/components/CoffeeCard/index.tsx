@@ -42,6 +42,10 @@ export const CoffeeCard = ({
         <Image src={image.url} alt={title} width={120} height={120} />
       </div>
 
+      <small>
+        {inventory} unidades restantes
+      </small>
+
       <div className="coffee-card-tag-list">
         { tags.map(tag => (
           <small key={tag} className="coffee-card-tag">

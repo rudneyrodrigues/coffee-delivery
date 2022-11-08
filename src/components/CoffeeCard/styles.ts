@@ -21,6 +21,11 @@ export const Container = styled.div`
     min-height: 120px;
   }
 
+  & > small {
+    margin-top: .3125rem;
+    color: ${theme.colors.gray[600]};
+  }
+
   & > .coffee-card-tag-list {
     height: 100%;
     margin-top: .75rem;
